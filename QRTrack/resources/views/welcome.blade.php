@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
 
-        <title>Laravel</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-        @vite('resources/css/app.css')  <!-- ←これを書き込むことでTaileindCSSが導入できる -->
-    </head>
+  <title>Laravel</title>
 
-  <h1 class="plugin">
-    Hello world!
-  </h1>
-    </body>
+  @vite('resources/css/app.css') <!-- ←これを書き込むことでTaileindCSSが導入できる -->
+</head>
+
+  <body class="w-full h-full md:gra sm:bg-red-200 bg-blue-200">
+    <h1 class="text-7xl md:plugin sm:test text-green-200">
+      Hello world!
+    </h1>
+  </body>
+
 </html>
