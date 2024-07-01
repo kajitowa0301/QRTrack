@@ -6,6 +6,7 @@ export default {
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./resources/**/*.vue",
+    'node_modules/preline/dist/*.js',
   ],
   theme: {
     // ブレイクポイントを指定
@@ -23,6 +24,7 @@ export default {
     },
   },
   plugins: [
+    require('preline/plugin'),
     // プロパティをまとめることができる
     plugin(function({addComponents}) {
       addComponents({
@@ -42,7 +44,7 @@ export default {
             background: 'linear-gradient(to right, #F8FFAE, #43C6AC)',   
         },
       })
-    })
+    }),
   ],
 }
 
