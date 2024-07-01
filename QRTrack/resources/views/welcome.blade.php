@@ -12,10 +12,10 @@
 
   <body class="w-full h-full md:gra sm:bg-red-200 bg-blue-200">
     <x-header-component />
-    <h1 class="text-7xl md:plugin sm:test text-green-200">
-      Hello world!
-    </h1>
-    <!-- <img src="/img/test.jpg" class=" w-28 h-28" alt=""> -->
+    <div class=" md:flex">
+    <x-card-component />
+    <x-card-component />
+    </div>
   </body>
 
 </html>
