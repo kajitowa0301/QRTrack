@@ -1,26 +1,42 @@
 <div>
-<header class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4 dark:bg-neutral-800">
-  <nav class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
-    <div class="flex items-center justify-between">
-      <a class="flex-none" href="#">
-        <img class="w-10 h-auto" width="100" height="100" viewBox="0 0 100 100" fill="none" src="data:image/webp;base64,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">
-</img>
-      </a>
-      <div class="sm:hidden">
-        <button type="button" class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:border-neutral-700 dark:text-white dark:hover:bg-white/10" data-hs-collapse="#navbar-image-1" aria-controls="navbar-image-1" aria-label="Toggle navigation">
-          <svg class="hs-collapse-open:hidden flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
-          <svg class="hs-collapse-open:block hidden flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </button>
+  <header class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4 dark:bg-neutral-800">
+    <nav class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
+      <div class="flex items-center justify-between">
+        <a class="flex-none" href="#">
+          <img class="w-10 h-auto" width="100" height="100" fill="none" src="/img/test.jpg" />
+        </a>
+        <div class="sm:hidden">
+          <button type="button"
+            class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:border-neutral-700 dark:text-white dark:hover:bg-white/10"
+            data-hs-collapse="#navbar-image-1" aria-controls="navbar-image-1" aria-label="Toggle navigation">
+            <svg class="hs-collapse-open:hidden flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
+              height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="3" x2="21" y1="6" y2="6" />
+              <line x1="3" x2="21" y1="12" y2="12" />
+              <line x1="3" x2="21" y1="18" y2="18" />
+            </svg>
+            <svg class="hs-collapse-open:block hidden flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+              width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
-    <div id="navbar-image-1" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
-      <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
-        <a class="font-medium text-blue-500" href="#" aria-current="page">Landing</a>
-        <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500" href="#">Account</a>
-        <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500" href="#">Work</a>
-        <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500" href="#">Blog</a>
+      <div id="navbar-image-1"
+        class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
+        <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
+          <a class="font-medium text-blue-500" href="#" aria-current="page">Landing</a>
+          <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
+            href="#">Account</a>
+          <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
+            href="#">Work</a>
+          <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
+            href="#">Blog</a>
+        </div>
       </div>
-    </div>
-  </nav>
-</header>
+    </nav>
+  </header>
 </div>

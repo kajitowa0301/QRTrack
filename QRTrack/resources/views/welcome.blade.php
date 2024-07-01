@@ -15,6 +15,7 @@
     <h1 class="text-7xl md:plugin sm:test text-green-200">
       Hello world!
     </h1>
+    <!-- <img src="/img/test.jpg" class=" w-28 h-28" alt=""> -->
   </body>
 
 </html>
