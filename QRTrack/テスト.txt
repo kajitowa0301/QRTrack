@@ -1,0 +1,19 @@
+■VSCodeでのサーバーの立ち上げ方
+
+１.npm run dev を実行
+２.php artisan serve を実行
+
+■Componentの作成のルール
+
+ルール１：コンポーネントはコマンドで作成してください！
+php artisan make:component "コンポーネント名"
+
+ルール２：コンポーネントはわかりやすいように！
+（例）ヘッダーのコンポーネントを作成する場合
+php artisan make:component headerComponent
+
+ルール３：コンポーネント名は「キャメルケース」で書く
+（例）ボタンのコンポーネントがある場合
+最初の文字の頭文字は小文字         次の文字の頭文字は大文字
+        button               +           Component     =  buttonComponent
+のように書いてください。
