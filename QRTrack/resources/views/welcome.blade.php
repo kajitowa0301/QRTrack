@@ -9,11 +9,9 @@
 
   @vite(['resources/css/app.css','resources/js/app.js']) <!-- ←これを書き込むことでTaileindCSSが導入できる -->
 </head>
-
   <body class="w-full h-full md:gra sm:bg-red-200 bg-blue-200">
     <x-header-component />
     <div class=" md:flex">
-    <x-card-component />
     <x-card-component />
     </div>
   </body>

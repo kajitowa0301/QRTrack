@@ -18,6 +18,7 @@ export default {
     },
     color: {
       // 使いたい色を指定
+      'likeColor':'#ffc8dd',
       primary:'#3490dc',
       pink:'#ee9ca7',
       danger:'#e3342f',

@@ -1,10 +1,23 @@
-<div class="mx-2">
-<div class="inline-flex rounded-full p-0.5 dark:border-neutral-700">
-  <button type="button" class="inline-flex flex-shrink-0 justify-center items-center size-10 rounded-full text-gray-500 hover:bg-blue-100 hover:text-pink-300 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-neutral-500 dark:hover:bg-blue-900 dark:hover:text-blue-200">
-    <svg class="flex-shrink-0 size-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M7 10v12"></path>
-      <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"></path>
+@php
+  $likeID = 1;
+@endphp
+<div x-data="{likeflag: $persist(false).as('{{$likeID}}')}">
+  <button @click="likeflag = !likeflag" class=" ml-3 mb-3">
+    <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+      y="0px" viewBox="0 0 512 512"
+      xml:space="preserve" :class="likeflag ? ' fill-pink-200' : ' fill-black'" class=" w-7 h-7">
+      <g>
+        <path class="st0" d="M484.5,327.114c16.188-6.984,27.5-23.047,27.5-41.781c0-19.25-11.969-35.625-28.859-42.297
+		c9.891-8.359,16.281-20.672,16.281-34.625c0-25.172-20.391-45.563-45.547-45.563H350.063c9.969-19.625,18.625-45.563,15.672-76.594
+		c-2.766-29.203-27.391-80.828-65.359-83.875c-29.25-2.344-34.906,8.625-34.906,37.969c0,0,0.328,28.422,0.328,46.641
+		c0,32.641-10.859,49.25-49.234,76.766c-50.625,36.297-59.406,55.031-59.406,55.031v216.672c0,27.219,22.063,49.281,49.281,49.281
+		h94.531h115.375c25.188,0,59.219-12.156,59.219-45.547c0-12.5-5.031-23.813-13.188-32.047
+		c22.031-3.188,39.016-21.969,39.016-44.891C501.391,348.021,494.734,335.474,484.5,327.114z"></path>
+        <path class="st0" d="M96.703,202.849H24.625C11.031,202.849,0,213.864,0,227.489v257.813c0,13.594,11.031,24.625,24.625,24.625
+		h72.078c13.609,0,24.641-11.031,24.641-24.625V227.489C121.344,213.864,110.313,202.849,96.703,202.849z M65.906,470.817
+		c-12.594,0-22.813-10.219-22.813-22.813s10.219-22.813,22.813-22.813c12.625,0,22.813,10.219,22.813,22.813
+		S78.531,470.817,65.906,470.817z"></path>
+      </g>
     </svg>
   </button>
-</div>
 </div>
