@@ -12,6 +12,8 @@
   <body class="">
     <x-header-component />
     <x-create-status-component />
+    <x-textbox-component />
+
     
 
 
