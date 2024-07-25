@@ -17,9 +17,12 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+     protected $primaryKey = 'users_id'; // 主キーを設定
+     
     protected $fillable = [
-        'name',
-        'email',
+        'users_name',
+        'users_mail',
         'password',
     ];
 

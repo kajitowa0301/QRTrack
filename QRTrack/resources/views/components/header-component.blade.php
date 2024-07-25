@@ -1,15 +1,15 @@
 <div class=" mb-2">
-  <header class="flex flex-wrap md:justify-start md:flex-nowrap w-full bg-white text-sm py-4 dark:bg-neutral-800">
+  <header class="flex flex-wrap md:justify-start md:flex-nowrap w-full bg-white text-sm py-4">
     <nav class="max-w-[85rem] w-full mx-auto px-4 md:flex md:items-center md:justify-between" aria-label="Global">
       <div class="flex items-center justify-between">
         <a class="flex-none" href="#">
           <!-- 画像の部分 -->
-          <img class=" w-24 h-auto"src="/img/logo.svg" />
+          <img class=" w-24 h-auto" src="/img/logo.svg" />
           <!--/　画像の部分  -->
         </a>
         <div class="md:hidden">
           <button type="button"
-            class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:border-neutral-700 dark:text-white dark:hover:bg-white/10"
+            class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
             data-hs-collapse="#navbar-image-1" aria-controls="navbar-image-1" aria-label="Toggle navigation">
             <svg class="hs-collapse-open:hidden flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
               height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -31,18 +31,25 @@
         class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block">
         <div class="flex flex-col gap-5 mt-5 md:flex-row md:items-center md:justify-end md:mt-0 md:ps-5">
           <!-- <a class="font-medium text-blue-500" href="#" aria-current="page">Landing</a> -->
-          <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 before:content-['🏡']"
-            href="#">Home</a>
-          <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
-            href="#">Profile</a>
-            <!-- ユーザーのログインをしているかを判定して -->
-             <!-- Login/Logoutを判別する -->
-              @if (true)
-              <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
-            href="#">Login</a>
-            <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500"
-            href="#">Logout</a>
-              @endif
+          <a class="font-medium text-gray-600 hover:text-gray-400"  href="#">Home</a>
+          <a class="font-medium text-gray-600 hover:text-gray-400" href="#">Profile</a>
+          @auth
+          <p class="font-medium text-pink-400 hover:text-gray-400" >{{Auth::user()->users_name }}</p>
+          @endauth
+          <!-- ユーザーのログインをしているかを判定して -->
+          <!-- Login/Logoutを判別する -->
+          @guest
+        <a class="font-medium text-gray-600 hover:text-gray-400" href="{{ route('login') }}">Login</a>
+      @endguest
+
+          @auth
+        <!-- Authentication -->
+        <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <a :href="route('logout')" onclick="event.preventDefault();
+                          this.closest('form').submit();">Log out</a>
+        </form>
+      @endauth
         </div>
       </div>
     </nav>
