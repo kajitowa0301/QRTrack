@@ -1,14 +1,3 @@
-<!-- <div class = "flex w-full mt-10">
-    <div class="w-full justify-center items-center">
-  <label for="input-label" class="block text-lg font-medium mb-2">モノの名前</label>
-
-  <input type="email" id="input-label" 
-    class="border py-3 px-4 block w-5/6 border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 
-    disabled:opacity-50 disabled:pointer-events-none 
-   " placeholder="らぅいｖｈｆｄｂらｖ">
-
-    </div>
-</div> -->
 <x-guest-layout>
 <div class = "w-full">
     <div class="w-full grid grid-cols-2 grid-rows-1">
@@ -35,6 +24,7 @@
                 autofocus  />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
+        <!-- End ものの名前 -->
 
         <!-- タイトル -->
         <div class="mt-8">
@@ -45,13 +35,14 @@
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
+        <!-- End タイトル -->
 
-    <!-- Input -->
+    <!-- 詳細情報 -->
       <div class="relative mt-8">
       <x-input-label for="password" :value="__('詳細情報')" />
-        <textarea class="mt-1 p-4 pb-12 block w-full border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="" required></textarea>
+        <textarea id = "postdetail" class="mt-1 p-4 pb-12 block w-full border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="" required></textarea>
       </div>
-    <!-- End Input -->
+    <!-- End 詳細情報 -->
 
     <!-- ボタン -->
     <div class="flex justify-center mt-8">
