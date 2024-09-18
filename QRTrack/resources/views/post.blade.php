@@ -12,7 +12,13 @@
   <body class="">
     <x-header-component />
     <x-create-status-component />
-    <x-textbox-component />
+    <x-guest-layout>
+      <form method="POST" action="{{ route('login') }}">
+        @csrf
+        <x-textbox-component />
+      </form>
+      <x-postbtn-component />
+    </x-guest-layout>
   </body>
 
 </html>
