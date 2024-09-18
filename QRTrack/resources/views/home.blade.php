@@ -13,7 +13,6 @@
     <x-header-component />
     <div class=" md:flex justify-center">
     <x-card-component />
-    </div>
   </body>
 
 </html>

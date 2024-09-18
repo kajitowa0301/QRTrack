@@ -1,4 +1,4 @@
-<div class=" mb-2">
+<div class=" mb-2 border-b border-gray-400">
   <header class="flex flex-wrap md:justify-start md:flex-nowrap w-full bg-white text-sm py-4">
     <nav class="max-w-[85rem] w-full mx-auto px-4 md:flex md:items-center md:justify-between" aria-label="Global">
       <div class="flex items-center justify-between">
@@ -31,8 +31,9 @@
         class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block">
         <div class="flex flex-col gap-5 mt-5 md:flex-row md:items-center md:justify-end md:mt-0 md:ps-5">
           <!-- <a class="font-medium text-blue-500" href="#" aria-current="page">Landing</a> -->
-          <a class="font-medium text-gray-600 hover:text-gray-400"  href="#">Home</a>
-          <a class="font-medium text-gray-600 hover:text-gray-400" href="#">Profile</a>
+          <a class="font-medium text-gray-600 hover:text-gray-400"  href="{{ route('home') }}">Home</a>
+          <a class="font-medium text-gray-600 hover:text-gray-400" href="{{ route('profile') }}">Profile</a>
+          <!-- ログイン確認用：後から削除する -->
           @auth
           <p class="font-medium text-pink-400 hover:text-gray-400" >{{Auth::user()->users_name }}</p>
           @endauth
@@ -41,9 +42,9 @@
           @guest
         <a class="font-medium text-gray-600 hover:text-gray-400" href="{{ route('login') }}">Login</a>
       @endguest
-
           @auth
         <!-- Authentication -->
+         <!-- ログアウト表示 -->
         <form method="POST" action="{{ route('logout') }}">
         @csrf
         <a :href="route('logout')" onclick="event.preventDefault();
