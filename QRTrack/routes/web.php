@@ -28,6 +28,11 @@ Route::get('/post_view',function(){
     return view('post_view');
 })->name('post_view');
 
+// 投稿編集用のルーティング
+Route::get('/postEdit',function(){
+    return view('postEdit');
+})->name('postEdit');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
