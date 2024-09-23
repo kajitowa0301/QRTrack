@@ -9,16 +9,16 @@
 
   @vite(['resources/css/app.css','resources/js/app.js']) <!-- ←これを書き込むことでTaileindCSSが導入できる -->
 </head>
-  <body class="">
+  <body class="w-full">
     <x-header-component />
-    <x-create-status-component />
-    <x-guest-layout>
+    <div class="max-w-2xl mx-auto mt-4">
+        <x-user-info-component />
       <form method="POST" action="{{ route('login') }}">
         @csrf
         <x-textbox-component />
       </form>
       <x-postbtn-component />
-    </x-guest-layout>
+    </div>
   </body>
 
 </html>

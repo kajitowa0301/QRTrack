@@ -1,16 +1,3 @@
-<div class = "w-full">
-  <div class="w-full grid grid-cols-2 grid-rows-1">
-    <div class="w-full col-span-1 row-span-2">
-      <div class ="text-gray-500">作成者</div>
-      <div class ="">ゲスト</div>
-    </div>
-    <div class="col-span-1 row-span-2">
-      <div class ="text-gray-500">作成日</div>
-      <div class ="">2024/07/29</div>
-    </div>
-  </div>
-</div>
-
 <!-- ものの名前 -->
 <div class = "mt-8">
   <x-input-label for="users_mail" :value="__('モノの名前')" />
