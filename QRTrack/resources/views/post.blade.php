@@ -11,7 +11,7 @@
 </head>
   <body class="w-full">
     <x-header-component />
-    <div class="max-w-2xl mx-auto mt-4">
+    <div class="px-4 sm:px-6 md:px-8 lg:px10 xl:px-12 mx-auto mt-4">
         <x-user-info-component />
       <form method="POST" action="{{ route('login') }}">
         @csrf
