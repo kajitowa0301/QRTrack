@@ -1,7 +1,9 @@
 <div class="my-4">
     <div
         class="flex flex-col mx-2 bg-white border shadow-sm rounded-xl">
-        <img class="w-full h-auto rounded-t-xl" src="/img/QRcode.jpg" alt="Image test">
+       <!-- QRコード画像 -->
+        <img class=" w-auto h-auto" src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->generate('https://chatgpt.com/')) !!} ">
+        <!-- QRコード画像 -->
         <div class="p-4 md:p-5">
             <h3 class="text-lg font-bold text-gray-800">
                 パソコンの極意
