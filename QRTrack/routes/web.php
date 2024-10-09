@@ -45,8 +45,7 @@ Route::get('/dashboard', function () {
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 
-Route::get('/post',function() {
-    return view('post');
-});
+Route::get('/index','PostController@post')->name('post.index');
+Route::get('/post','PostController@post')->name('post.post');
 
 require __DIR__.'/auth.php';
