@@ -1,6 +1,6 @@
 <div class="my-4">
     <div
-        class="flex flex-col mx-2 bg-white border shadow-sm rounded-xl">
+        class="flex flex-col mx-2 bg-white border shadow-sm rounded-xl p-1">
        <!-- QRコード画像 -->
         <img class=" w-auto h-auto" src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->generate('https://chatgpt.com/')) !!} ">
         <!-- QRコード画像 -->

@@ -19,7 +19,9 @@
             <p class=" font-medium hover:text-gray-400">総いいね数</p>
         </div>
     </div>
+    <div class="md:flex justify-center">
     <x-card-component />
+    </div>
 </body>
 
 </html>

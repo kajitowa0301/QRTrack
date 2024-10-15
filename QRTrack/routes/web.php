@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,7 +46,8 @@ Route::get('/dashboard', function () {
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 
-Route::get('/index','PostController@post')->name('post.index');
-Route::get('/post','PostController@post')->name('post.post');
+// Route::get('/index','PostController@post')->name('post.index');
+Route::get('/post',[PostController::class,'index'])->name('postView');
+Route::post('/post',[PostController::class,'store'])->name('postStore');
 
 require __DIR__.'/auth.php';

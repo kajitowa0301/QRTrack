@@ -1,4 +1,4 @@
-<div class=" mb-2 border-b border-gray-400">
+<div class=" mb-2 border-b border-gray-400 shadow-xl">
   <header class="flex flex-wrap md:justify-start md:flex-nowrap w-full bg-white text-sm py-4">
     <nav class="max-w-[85rem] w-full mx-auto px-4 md:flex md:items-center md:justify-between" aria-label="Global">
       <div class="flex items-center justify-between">
