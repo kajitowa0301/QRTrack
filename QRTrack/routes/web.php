@@ -47,7 +47,7 @@ Route::get('/dashboard', function () {
 // });
 
 // Route::get('/index','PostController@post')->name('post.index');
-Route::get('/post',[PostController::class,'index'])->name('postView');
+Route::get('/post',[PostController::class,'index'])->middleware('auth')->name('postView');
 Route::post('/post',[PostController::class,'store'])->name('postStore');
 
 require __DIR__.'/auth.php';

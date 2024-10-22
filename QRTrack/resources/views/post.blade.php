@@ -16,8 +16,8 @@
       <form method="POST" action="{{ route('postStore') }}">
         @csrf
         <x-textbox-component />
+        <x-postbtn-component />
       </form>
-      <x-postbtn-component />
     </div>
   </body>
 
