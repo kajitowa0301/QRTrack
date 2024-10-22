@@ -22,17 +22,25 @@ class PostController extends Controller
         $url =$request->fullUrl();
         $obj_name = $request->posts_type;
 
+        // dd($url,$id,$obj_name);
+
         // PostDetailsモデルにセット
         $title = $request->details_title;
         $content = $request->details_content;
 
         // Postsモデルに保存
-        Posts::createPosts($obj_name,$id,$url);
+        Posts::createPosts($obj_name,$id);
 
-        // Postsモデルに保存保存されたユーザーの最新の投稿IDを取得
-        $posts_id = Posts::select('posts_id')->where('users_id',$id)->latest()->first();
+
+        // Postsモデルに保存されたユーザーの最新の投稿IDを取得
+        $posts_id = Posts::where('users_id', auth()->id())
+        ->orderBy('created_at', 'desc')
+        ->first('posts_id');
+        Posts::updateUrl($url,$posts_id['posts_id']);
+
+        // dd();
         PostDetails::createPostDetails($title,$content,$posts_id);
 
-        return redirect()->route('/');
+        return redirect()->route('home');
     }
 }

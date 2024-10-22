@@ -20,10 +20,12 @@ class PostDetails extends Model
 
     public static function createPostDetails($title,$content,$posts_id)
     {
-        $postDetails = new PostDetails();
-        $postDetails->details_title = $title;
-        $postDetails->details_content = $content;
-        $postDetails->posts_id = $posts_id;
+        // dd($title,$content,$posts_id);
+        $postDetails = new PostDetails([
+            'details_title'=> $title,
+            'details_content' => $content,
+            'posts_id' => intval($posts_id['posts_id']),
+        ]);
         $postDetails->save();
     }
 }

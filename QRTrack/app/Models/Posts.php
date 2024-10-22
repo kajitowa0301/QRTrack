@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use function Laravel\Prompts\select;
+
 class Posts extends Model
 {
     use HasFactory;
@@ -17,19 +19,23 @@ class Posts extends Model
         'users_id',
     ];
 
-    public static function createPosts($obj_name,$user_id,$url)
+    public static function createPosts($obj_name,$user_id)
     {
-        $posts = new Posts();
-        $posts->posts_type = $obj_name;
-        $posts->users_id = $user_id;
+        $posts = new Posts([
+            'posts_type'=> $obj_name,
+            'users_id' => $user_id,
+            'posts_qr' => '',
+        ]);
         $posts->save();
-
-        $posts_id = $posts->id;
-        $path = $url.$posts_id;
-        $posts->posts_qr = $path;
-        $posts->save();
-
-        dd($posts); 
+        return $posts;
         
+    }
+
+    public static function updateUrl($url,$id)
+    {
+        $path = $url.'/'.$id;
+        $up = new Posts();
+        $up->where('posts_id',$id)
+        ->update(['posts_qr'=>$path]);
     }
 }
