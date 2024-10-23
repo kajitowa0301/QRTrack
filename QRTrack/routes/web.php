@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ViewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,15 +15,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-// ホーム画面用のルーティング
-Route::get('/', function () {
-    return view('home');
-})->name('home');
-
 // プロフィール画面用のルーティング
-Route::get('/profile', function() {
-    return view('profile');
-})->name('profile');
+// Route::get('/profile', function() {
+//     return view('profile');
+// })->name('profile');
 
 // 投稿表示用のルーティング
 Route::get('/post_view',function(){
@@ -40,13 +36,15 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 // いったんコメントアウト
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
-
-// Route::get('/index','PostController@post')->name('post.index');
+Route::middleware('auth')->group(function () {
+    Route::get ('/profile', [ProfileController::class, 'show'])->name('profile.show');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+// ホーム画面用のルーティング
+Route::get('/',[ViewController::class,'home'])->name('home');
+// 投稿画面用のルーティング
 Route::get('/post',[PostController::class,'index'])->middleware('auth')->name('postView');
 Route::post('/post',[PostController::class,'store'])->name('postStore');
 

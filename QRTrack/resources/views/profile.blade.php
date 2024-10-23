@@ -15,8 +15,8 @@
             <h1 class="font-medium hover:text-gray-400 ml-4">ユーザー名変更</h1>
         </div>
         <div class="w-1/2 flex flex-col items-center">
-            <p class=" mb-5 font-medium hover:text-gray-400">投稿数</p>
-            <p class=" font-medium hover:text-gray-400">総いいね数</p>
+            <p class=" mb-5 font-medium hover:text-gray-400">名前：{{Auth::user()->users_name }}</p>
+            <p class=" font-medium hover:text-gray-400">投稿数：{{$postCount->count()}}</p>
         </div>
     </div>
     <div class="md:flex justify-center">

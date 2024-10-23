@@ -37,8 +37,7 @@ class PostController extends Controller
         ->orderBy('created_at', 'desc')
         ->first('posts_id');
         Posts::updateUrl($url,$posts_id['posts_id']);
-
-        // dd();
+        
         PostDetails::createPostDetails($title,$content,$posts_id);
 
         return redirect()->route('home');
