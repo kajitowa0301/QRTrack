@@ -4,9 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
-use function Laravel\Prompts\select;
-
 class Posts extends Model
 {
     use HasFactory;
@@ -17,6 +14,7 @@ class Posts extends Model
         //QRコードのURL 
         'posts_qr',
         'users_id',
+        // strageのpath
     ];
 
     public static function createPosts($obj_name,$user_id)

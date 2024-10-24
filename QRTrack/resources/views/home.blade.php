@@ -14,5 +14,4 @@
     <div class=" md:flex justify-center">
     <x-card-component />
   </body>
-
 </html>
