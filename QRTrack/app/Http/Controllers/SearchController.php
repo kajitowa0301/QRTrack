@@ -8,11 +8,13 @@ use App\Models\Posts;
 class SearchController extends Controller
 {
     public function search(Request $request)
-    {
+    {   
+        //検索キーワードの取得
         $query = $request->input('keyword');
+        //一致したデータの検索
         $results = Posts::where('posts_type', 'LIKE', "%{$query}%")
                         ->get();
-        dd($results);
+        //検索結果をビューに渡す
         return view('search_view', compact('results', 'query'));
     }
 }

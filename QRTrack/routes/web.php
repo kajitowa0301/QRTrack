@@ -48,6 +48,6 @@ Route::get('/',[ViewController::class,'home'])->name('home');
 // 投稿画面用のルーティング
 Route::get('/post',[PostController::class,'index'])->middleware('auth')->name('postView');
 Route::post('/post',[PostController::class,'store'])->name('postStore');
-// ヘッダー検索機能用のルーティング
+// 検索機能用のルーティング
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 require __DIR__.'/auth.php';
