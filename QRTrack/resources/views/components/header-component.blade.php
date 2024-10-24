@@ -35,9 +35,9 @@
           <a class="font-medium text-gray-600 hover:text-gray-400"  href="{{ route('postView') }}">Post</a>
           <a class="font-medium text-gray-600 hover:text-gray-400" href="{{ route('profile.show') }}">Profile</a>
           <!-- ログイン確認用：後から削除する -->
-          @auth
+          <!-- @auth
           <p class="font-medium text-pink-400 hover:text-gray-400" >{{Auth::user()->users_name }}</p>
-          @endauth
+          @endauth -->
           <!-- ユーザーのログインをしているかを判定して -->
           <!-- Login/Logoutを判別する -->
           @guest
@@ -50,6 +50,10 @@
         @csrf
         <a :href="route('logout')" onclick="event.preventDefault();
                           this.closest('form').submit();">Log out</a>
+        </form>
+        <form method = "GET" action = "{{ route('search') }}">
+          <input type = "text" name = "keyword" class="border-2 border-gray-400 rounded-lg" placeholder="🔍キーワードを入力">
+          <button type="submit" class="bg-blue-200 text-black p-2 rounded ">検索</button>
         </form>
       @endauth
         </div>
