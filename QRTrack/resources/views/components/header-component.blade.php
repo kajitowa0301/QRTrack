@@ -32,6 +32,7 @@
         <div class="flex flex-col gap-5 mt-5 md:flex-row md:items-center md:justify-end md:mt-0 md:ps-5">
           <!-- <a class="font-medium text-blue-500" href="#" aria-current="page">Landing</a> -->
           <a class="font-medium text-gray-600 hover:text-gray-400"  href="{{ route('home') }}">Home</a>
+          <a class="font-medium text-gray-600 hover:text-gray-400"  href="{{ route('postView') }}">Post</a>
           <a class="font-medium text-gray-600 hover:text-gray-400" href="{{ route('profile.show') }}">Profile</a>
           <!-- ログイン確認用：後から削除する -->
           @auth
