@@ -1,11 +1,8 @@
-@php
-  $likeID = 1;
-@endphp
-<div x-data="{likeflag: $persist(false).as('{{$likeID}}')}">
-  <button @click="likeflag = !likeflag" class=" ml-3 mb-3">
+<div>
+  <button  class=" ml-3 mb-3">
     <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
       y="0px" viewBox="0 0 512 512"
-      xml:space="preserve" :class="likeflag ? ' fill-pink-200' : ' fill-black'" class=" w-7 h-7">
+      xml:space="preserve"  class="w-7 h-7">
       <g>
         <path class="st0" d="M484.5,327.114c16.188-6.984,27.5-23.047,27.5-41.781c0-19.25-11.969-35.625-28.859-42.297
 		c9.891-8.359,16.281-20.672,16.281-34.625c0-25.172-20.391-45.563-45.547-45.563H350.063c9.969-19.625,18.625-45.563,15.672-76.594

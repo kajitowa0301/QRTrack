@@ -15,6 +15,7 @@ class Posts extends Model
         'posts_qr',
         'users_id',
         // strageのpath
+        'img_path',
     ];
 
     public static function createPosts($obj_name,$user_id)
@@ -26,7 +27,6 @@ class Posts extends Model
         ]);
         $posts->save();
         return $posts;
-        
     }
 
     public static function updateUrl($url,$id)
@@ -35,5 +35,12 @@ class Posts extends Model
         $up = new Posts();
         $up->where('posts_id',$id)
         ->update(['posts_qr'=>$path]);
+    }
+
+    public static function imgPathQrCode($src,$id)
+    {
+        $img = new Posts();
+        $img->where('posts_id',$id)
+        ->update(['img_path'=>$src]);
     }
 }

@@ -9,3 +9,7 @@ Alpine.plugin(persist);
 window.Alpine = Alpine;
 
 Alpine.start();
+
+function LocalsetItem(key ){
+    console.log(key);
+}

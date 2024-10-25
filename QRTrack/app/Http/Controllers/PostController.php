@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Posts;
 use Illuminate\Http\Request;
 use App\Models\PostDetails;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -22,22 +24,40 @@ class PostController extends Controller
         $url =$request->fullUrl();
         $obj_name = $request->posts_type;
 
-        // dd($url,$id,$obj_name);
-
         // PostDetailsモデルにセット
         $title = $request->details_title;
         $content = $request->details_content;
 
         // Postsモデルに保存
         Posts::createPosts($obj_name,$id);
-
-
+        
         // Postsモデルに保存されたユーザーの最新の投稿IDを取得
         $posts_id = Posts::where('users_id', auth()->id())
         ->orderBy('created_at', 'desc')
         ->first('posts_id');
+
+        // 保存された情報を元にURLを作成
         Posts::updateUrl($url,$posts_id['posts_id']);
+
+        // QRcodeに必要なURLを取得
+        $qr_url = Posts::where('users_id', auth()->id())
+        ->orderBy('created_at', 'desc')
+        ->first('posts_qr');
+
         
+        // Qrcodeを生成
+         $qrcode =  QRcode::format('png')->generate($qr_url['posts_qr']);
+        //  dd($qr_url);
+        // 生成したQRcodeをStorageに保存
+        $file_name = 'qrcode'.time().'.png';
+        $src = Storage::url($file_name);
+        Storage::disk('public')->put($file_name, $qrcode);
+
+        // 生成したQRcodeのパスをPostsモデルに保存
+        Posts::imgPathQrCode($src,$posts_id['posts_id']);
+
+
+        // タイトル、詳細をPostDetailsモデルに保存
         PostDetails::createPostDetails($title,$content,$posts_id);
 
         return redirect()->route('home');
