@@ -36,7 +36,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// いったんコメントアウト
+// プロフィール編集用のルーティング
 Route::middleware('auth')->group(function () {
     Route::get ('/profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -50,4 +50,5 @@ Route::get('/post',[PostController::class,'index'])->middleware('auth')->name('p
 Route::post('/post',[PostController::class,'store'])->name('postStore');
 // 検索機能用のルーティング
 Route::get('/search', [SearchController::class, 'search'])->name('search');
+
 require __DIR__.'/auth.php';
