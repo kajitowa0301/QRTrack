@@ -41,7 +41,7 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        return Redirect::route('profile.show')->with('status', 'profile-updated');
     }
 
     /**
@@ -68,14 +68,14 @@ class ProfileController extends Controller
     public function nameupdate(Request $request): RedirectResponse
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            'newname' => ['required', 'string', 'max:255'],
         ]);
 
         $user = Auth::user();
-        $user->name = $request->input('newname');
+        $user->users_name = $request->input('newname');
         $user->save();
 
 
-        return Redirect::route('profile.edit')->with('status', 'name-updated');
+        return Redirect::route('profile.show')->with('status', 'name-updated');
     }
 }
