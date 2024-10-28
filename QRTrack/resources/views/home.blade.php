@@ -11,7 +11,7 @@
 </head>
   <body class="w-full h-full">
     <x-header-component />
-    <div class=" md:flex justify-center">
+    <div class="w-auto h-auto">
     <x-card-component />
   </body>
 </html>

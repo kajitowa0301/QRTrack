@@ -1,13 +1,13 @@
 <div class=" mb-2 border-b border-gray-400 shadow-xl">
-  <header class="flex flex-wrap md:justify-start md:flex-nowrap w-full bg-white text-sm py-4">
-    <nav class="max-w-[85rem] w-full mx-auto px-4 md:flex md:items-center md:justify-between" aria-label="Global">
+  <header class="flex flex-wrap xl:justify-start xl:flex-nowrap w-full bg-white text-sm py-4">
+    <nav class="max-w-[85rem] w-full mx-auto px-4 xl:flex md:items-center xl:justify-between" aria-label="Global">
       <div class="flex items-center justify-between">
         <a class="flex-none" href="#">
           <!-- 画像の部分 -->
           <img class=" w-24 h-auto" src="/img/logo.svg" />
           <!--/　画像の部分  -->
         </a>
-        <div class="md:hidden">
+        <div class="xl:hidden">
           <button type="button"
             class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
             data-hs-collapse="#navbar-image-1" aria-controls="navbar-image-1" aria-label="Toggle navigation">
@@ -28,16 +28,12 @@
         </div>
       </div>
       <div id="navbar-image-1"
-        class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block">
+        class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow xl:block">
         <div class="flex flex-col gap-5 mt-5 md:flex-row md:items-center md:justify-end md:mt-0 md:ps-5">
           <!-- <a class="font-medium text-blue-500" href="#" aria-current="page">Landing</a> -->
           <a class="font-medium text-gray-600 hover:text-gray-400"  href="{{ route('home') }}">Home</a>
           <a class="font-medium text-gray-600 hover:text-gray-400"  href="{{ route('postView') }}">Post</a>
           <a class="font-medium text-gray-600 hover:text-gray-400" href="{{ route('profile.show') }}">Profile</a>
-          <!-- ログイン確認用：後から削除する -->
-          <!-- @auth
-          <p class="font-medium text-pink-400 hover:text-gray-400" >{{Auth::user()->users_name }}</p>
-          @endauth -->
           <!-- ユーザーのログインをしているかを判定して -->
           <!-- Login/Logoutを判別する -->
           @guest

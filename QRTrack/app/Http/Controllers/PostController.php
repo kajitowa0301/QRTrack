@@ -47,7 +47,6 @@ class PostController extends Controller
         
         // Qrcodeを生成
          $qrcode =  QRcode::format('png')->generate($qr_url['posts_qr']);
-        //  dd($qr_url);
         // 生成したQRcodeをStorageに保存
         $file_name = 'qrcode'.time().'.png';
         $src = Storage::url($file_name);

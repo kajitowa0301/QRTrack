@@ -15,6 +15,7 @@ export default {
     theme: {
         // ブレイクポイントを指定
         screens: {
+            xs:"320px",
             sm: "375px", // モバイルM
             md: "425px", // モバイルL
             lg: "768px", // タブレット

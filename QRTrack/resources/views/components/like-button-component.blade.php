@@ -1,6 +1,6 @@
 <div>
-  <button  class=" ml-3 mb-3">
-    <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+  <button  class=" ml-3 mb-3" onclick="flag(value,`{{$id}}`)"  value=false id = 'flag{{$id}}'>
+    <svg version="1.1" id="svg_color{{$id}}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
       y="0px" viewBox="0 0 512 512"
       xml:space="preserve"  class="w-7 h-7">
       <g>
@@ -18,3 +18,27 @@
     </svg>
   </button>
 </div>
+<script>
+  window.onload=()=>{
+    if(localStorage.getItem('posts_id') == '{{$id}}'){
+      document.getElementById('svg_color{{$id}}').style.fill = '#FBCFE8';
+      document.getElementById('flag{{$id}}').value = true;
+    }
+  }
+  function flag(value,id){
+    if(value == 'false'){
+      // falseの場合
+      setValue =document.getElementById('flag{{$id}}').value = true;
+      color = document.getElementById('svg_color{{$id}}').style.fill = '#FBCFE8';
+      localStorage.setItem('posts_id',id);
+      console.log('保存');
+    }else{
+      // trueの場合
+      setValue =document.getElementById('flag{{$id}}').value = false;
+      color = document.getElementById('svg_color{{$id}}').style.fill = '#000000';
+      localStorage.removeItem('posts_id',id);
+      value = false;
+      console.log('削除');
+    }
+}
+</script>
