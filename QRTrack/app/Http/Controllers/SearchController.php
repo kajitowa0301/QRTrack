@@ -13,7 +13,11 @@ class SearchController extends Controller
         $query = $request->input('keyword');
         //一致したデータの検索
         $results = Posts::where('posts_type', 'LIKE', "%{$query}%")
-                        ->get();
+                    ->orWhereHas('postDetails', function($q) use ($query) {
+                    $q->where('details_title', 'LIKE', "%{$query}%");
+                    })
+                    ->get();
+
         //検索結果をビューに渡す
         return view('search_view', compact('results', 'query'));
     }

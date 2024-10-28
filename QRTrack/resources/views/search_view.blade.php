@@ -18,7 +18,11 @@
     @if($results->isEmpty())
       <p>結果が見つかりませんでした。</p>
     @else
-      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        @foreach($results as $result)
+          <x-card-component :post="$result" />
+        @endforeach
+      </div>
     @endif
   </div>
 </body>

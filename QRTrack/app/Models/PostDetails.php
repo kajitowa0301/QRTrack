@@ -28,4 +28,11 @@ class PostDetails extends Model
         ]);
         $postDetails->save();
     }
+
+    // postsとのリレーションシップを定義
+    public function post()
+    {
+        return $this->belongsTo(Posts::class, 'posts_id');
+    }
+
 }

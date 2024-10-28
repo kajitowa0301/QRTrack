@@ -8,6 +8,9 @@ class Posts extends Model
 {
     use HasFactory;
 
+    // 主キーを指定
+    protected $primaryKey = 'posts_id';
+
     protected $fillable = [
         // 物の名前
         'posts_type',
@@ -42,5 +45,11 @@ class Posts extends Model
         $img = new Posts();
         $img->where('posts_id',$id)
         ->update(['img_path'=>$src]);
+    }
+
+    // post_detailとのリレーションシップを定義
+    public function postDetails()
+    {
+        return $this->hasMany(PostDetails::class, 'posts_id');
     }
 }
