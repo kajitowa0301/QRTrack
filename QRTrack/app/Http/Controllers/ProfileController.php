@@ -64,4 +64,18 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
+    public function nameupdate(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+        ]);
+
+        $user = Auth::user();
+        $user->name = $request->input('newname');
+        $user->save();
+
+
+        return Redirect::route('profile.edit')->with('status', 'name-updated');
+    }
 }

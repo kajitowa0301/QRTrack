@@ -38,9 +38,10 @@ Route::get('/dashboard', function () {
 
 // プロフィール編集用のルーティング
 Route::middleware('auth')->group(function () {
-    Route::get ('/profile', [ProfileController::class, 'show'])->name('profile.show');
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::patch('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+    Route::patch('/profile/nameupdate', [ProfileController::class, 'nameupdate'])->name('profile.nameupdate');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 // ホーム画面用のルーティング

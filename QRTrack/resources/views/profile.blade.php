@@ -28,12 +28,12 @@
   <div id="nameChangeModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
     <div class="bg-white p-6 rounded shadow-lg">
       <h2 class="text-xl font-bold mb-4">名前の変更</h2>
-      <form method="POST" action="{{ route('profile.update') }}">
+      <form method="POST" action="{{ route('profile.nameupdate') }}">
         @csrf
         @method('PATCH')
         <div class="mb-4">
-          <label for="name" class="block text-sm font-medium text-gray-700">新しい名前</label>
-          <input type="text" name="name" id="name" class="mt-1 p-2 border border-gray-300 rounded w-full" required>
+          <label for="newname" class="block text-sm font-medium text-gray-700">新しい名前</label>
+          <input type="text" name="newname" id="newname" class="mt-1 p-2 border border-gray-300 rounded w-full" required>
         </div>
         <div class="flex justify-end">
           <button type="button" id="closeModalButton" class="bg-gray-500 text-white p-2 rounded mr-2">キャンセル</button>

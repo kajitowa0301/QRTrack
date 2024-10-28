@@ -19,10 +19,10 @@ class cardComponent extends Component
     }
     public function render(): View|Closure|string
     {
-        $data = Posts::where('posts_id',72)->first();
+        $data = Posts::where('posts_id',1)->first();
         // dd($data);
         $id = $data['posts_id'];
-        $title_content = PostDetails::where('posts_id',72)->first();
+        $title_content = PostDetails::where('posts_id',1)->first();
         // dd($title_content);
         return view('components.card-component',compact('data','title_content','id'));
     }
