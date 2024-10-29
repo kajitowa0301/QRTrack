@@ -1,7 +1,7 @@
-<div class=" mx-11">
+<div class="my-3 mx-auto">
     <input type="hidden" name="id" value="{{$id}}">
     <div class="flex flex-col w-1/5 mx-2 bg-white border shadow-sm rounded-xl p-1
-     lg:w-52
+     lg:w-52 lg:mx-5
      md:mx-auto md:w-52 
      sm:w-52 sm:mx-auto xs:w-44 xs:mx-auto">
        <!-- QRコード画像 -->
@@ -11,7 +11,7 @@
             <h3 class="text-lg font-bold text-gray-800">
                 {{$postData->posts_type}}
             </h3>
-            <p class="mt-1 text-gray-500">
+            <p class="mt-1 text-gray-500 text-ellipsis overflow-hidden">
                 {{$title_content->details_title}}
             </p>
         </div>

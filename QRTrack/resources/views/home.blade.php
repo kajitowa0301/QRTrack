@@ -7,14 +7,17 @@
 
   <title>Laravel</title>
 
-  @vite(['resources/css/app.css','resources/js/app.js']) <!-- ←これを書き込むことでTaileindCSSが導入できる -->
+  @vite(['resources/css/app.css', 'resources/js/app.js']) <!-- ←これを書き込むことでTaileindCSSが導入できる -->
 </head>
-  <body class="w-full h-full">
-    <x-header-component />
-    <div class="w-4/5 my-4 mx-auto flex flex-wrap">
-      @foreach ( $datas as $data )
-        <x-card-component :data="$data" />
-      @endforeach
-    </div>
-  </body>
+
+<body class="w-full h-full gra">
+  <x-header-component />
+  <div class=" w-full flex">
+        <div class="flex flex-wrap">
+            @foreach ($datas as $data)
+                    <x-card-component :data="$data" />
+            @endforeach
+        </div>
+</body>
+
 </html>
