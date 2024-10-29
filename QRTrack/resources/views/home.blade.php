@@ -12,5 +12,9 @@
   <body class="w-full h-full">
     <x-header-component />
     <div class="w-auto h-auto">
+      @foreach ( $datas as $data )
+        <x-card-component :data="$data" />
+      @endforeach
+    </div>
   </body>
 </html>
