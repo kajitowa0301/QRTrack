@@ -11,7 +11,7 @@
 </head>
   <body class="w-full h-full">
     <x-header-component />
-    <div class="w-auto h-auto">
+    <div class="w-4/5 my-4 mx-auto flex flex-wrap">
       @foreach ( $datas as $data )
         <x-card-component :data="$data" />
       @endforeach

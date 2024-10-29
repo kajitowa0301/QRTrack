@@ -1,6 +1,6 @@
-<div class="my-4">
+<div class=" mx-11">
     <input type="hidden" name="id" value="{{$id}}">
-    <div class="flex flex-col mx-2 bg-white border shadow-sm rounded-xl p-1
+    <div class="flex flex-col w-1/5 mx-2 bg-white border shadow-sm rounded-xl p-1
      lg:w-52
      md:mx-auto md:w-52 
      sm:w-52 sm:mx-auto xs:w-44 xs:mx-auto">
@@ -20,7 +20,6 @@
                 <x-like-button-component :$id  />
             </div>
             <div class="w-1/3 flex justify-evenly">
-                <!-- <x-share-button-component /> -->
                 <x-delete-box :$id/>
             </div>
         </div>
