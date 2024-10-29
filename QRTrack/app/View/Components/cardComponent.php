@@ -10,20 +10,22 @@ use Illuminate\Contracts\View\View;
 
 class cardComponent extends Component
 {
+    public $postId;
+
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($postId)
     {
-        //
+        $this->postId = $postId;
     }
+
     public function render(): View|Closure|string
     {
-        $data = Posts::where('posts_id',1)->first();
-        // dd($data);
+        $data = Posts::where('posts_id', $this->postId)->first();
         $id = $data['posts_id'];
-        $title_content = PostDetails::where('posts_id',1)->first();
-        // dd($title_content);
-        return view('components.card-component',compact('data','title_content','id'));
+        $title_content = PostDetails::where('posts_id', $this->postId)->first();
+
+        return view('components.card-component', compact('data', 'title_content', 'id'));
     }
 }

@@ -12,6 +12,5 @@
   <body class="w-full h-full">
     <x-header-component />
     <div class="w-auto h-auto">
-    <x-card-component />
   </body>
 </html>

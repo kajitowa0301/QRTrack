@@ -12,7 +12,7 @@
                 {{$data->posts_type}}
             </h3>
             <p class="mt-1 text-gray-500">
-                {{$title_content->details_title}}
+                {{$data->details_title}}
             </p>
         </div>
         <div class=" flex justify-between">
