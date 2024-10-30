@@ -44,11 +44,14 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile/nameupdate', [ProfileController::class, 'nameupdate'])->name('profile.nameupdate');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-// ホーム画面用のルーティング
+// 画面表示用のルーティング
 Route::get('/',[ViewController::class,'home'])->name('home');
+
 // 投稿画面用のルーティング
 Route::get('/post',[PostController::class,'index'])->middleware('auth')->name('postView');
 Route::post('/post',[PostController::class,'store'])->name('postStore');
+Route::get('/post_view/{id}',[PostController::class,'show'])->name('postShow');
+
 // 検索機能用のルーティング
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 

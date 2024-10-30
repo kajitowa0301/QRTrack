@@ -21,6 +21,7 @@ class Posts extends Model
         'img_path',
     ];
 
+    // 投稿を作成
     public static function createPosts($obj_name,$user_id)
     {
         $posts = new Posts([
@@ -31,7 +32,7 @@ class Posts extends Model
         $posts->save();
         return $posts;
     }
-
+    // URLを更新
     public static function updateUrl($url,$id)
     {
         $path = $url.'/'.$id;
@@ -39,7 +40,7 @@ class Posts extends Model
         $up->where('posts_id',$id)
         ->update(['posts_qr'=>$path]);
     }
-
+    // 画像のパスを保存
     public static function imgPathQrCode($src,$id)
     {
         $img = new Posts();
@@ -51,5 +52,12 @@ class Posts extends Model
     public function postDetails()
     {
         return $this->hasMany(PostDetails::class, 'posts_id');
+    }
+
+    //投稿個別表示 
+    public static function getDetails($id)
+    {
+        $datas = Posts::where('posts_id', $id['posts_id'])->get(['posts_type', 'created_at']);
+        return $datas;
     }
 }

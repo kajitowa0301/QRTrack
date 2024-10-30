@@ -61,4 +61,14 @@ class PostController extends Controller
 
         return redirect()->route('home');
     }
+
+    // 投稿個別表示
+    public function show(Posts $id)
+    {
+        $datas = Posts::getDetails($id); 
+        $postId = $id['posts_id'];
+        // dd($postId);
+        return view('post_view',compact('datas','postId'));
+    }
+
 }
