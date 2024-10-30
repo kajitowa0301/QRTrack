@@ -26,7 +26,6 @@ class cardComponent extends Component
         $id = $data['posts_id'];
         $postData = Posts::where('posts_id', $id)->first();
         $title_content = PostDetails::where('posts_id', $id)->first();
-
         return view('components.card-component', compact('postData', 'title_content', 'id'));
     }
 }

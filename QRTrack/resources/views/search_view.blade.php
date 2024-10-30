@@ -20,7 +20,7 @@
     @else
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         @foreach($results as $result)
-          <x-card-component :postId="$result->posts_id" />
+          <x-card-component :data="$result" />
         @endforeach
       </div>
     @endif
