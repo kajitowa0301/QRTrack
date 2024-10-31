@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ViewController;
@@ -56,5 +57,8 @@ Route::post('/post_view/{id}/add', [PostController::class, 'addDetail'])->name('
 
 // 検索機能用のルーティング
 Route::post('/search', [SearchController::class, 'search'])->name('search');
+
+// 削除用のルーティング
+Route::delete('posts/{id}', [DeleteController::class, 'destroy'])->name('postDestroy');
 
 require __DIR__.'/auth.php';

@@ -11,6 +11,11 @@
 </head>
 <body class="w-full">
   <x-header-component />
+  @if (session('message'))
+    <div class=" text-red-400 font-bold">
+      {{ session('message') }}
+    </div>
+  @endif
   <form method = "POST" action = "{{ route('search') }}" class="my-4 flex justify-center">
     @csrf
       <input type = "text" name = "keyword" class="border-2 border-gray-400 rounded-lg w-9/12 mr-10" placeholder="🔍キーワードを入力">

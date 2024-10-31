@@ -11,6 +11,11 @@
 </head>
 <body class="w-full">
   <x-header-component />
+  @if (session('message'))
+    <div class=" text-red-400 font-bold">
+      {{ session('message') }}
+    </div>
+  @endif
   <div class="w-full h-auto flex items-center justify-center mb-5">
     <div class="w-1/2">
         <h1 class="font-medium hover:text-gray-400 ml-4" id="changeNameButton">ユーザー名変更</h1>

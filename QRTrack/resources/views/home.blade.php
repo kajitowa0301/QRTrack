@@ -12,6 +12,11 @@
 
 <body class="w-full h-full gra">
   <x-header-component />
+  @if (session('message'))
+    <div class=" text-red-400 font-bold">
+      {{ session('message') }}
+    </div>
+  @endif
   <div class=" w-full flex">
         <div class="flex flex-wrap">
             @foreach ($datas as $data)
