@@ -18,6 +18,12 @@
     <p class=" font-bold text-3xl">{{$datas->first()->posts_type}}</p>
   </div>
   <x-list-component :$postId/>
+  @if ($usersId == Auth::id())
+    <div class="w-1/3 flex justify-evenly">
+      <x-postbtn-component />
+    </div>
+  @endif
+  
 </body>
 
 </html>

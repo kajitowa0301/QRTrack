@@ -67,8 +67,21 @@ class PostController extends Controller
     {
         $datas = Posts::getDetails($id); 
         $postId = $id['posts_id'];
+        $usersId = $id['users_id'];
         // dd($postId);
-        return view('post_view',compact('datas','postId'));
+        return view('post_view',compact('datas','postId','usersId'));
+    }
+
+    //　新しい詳細を追加
+    public function addDetail(Request $request, $id)
+    {
+        $title = $request->input('details_title');
+        $content = $request->input('details_content');
+
+        // タイトル、詳細をPostDetailsモデルに保存
+        PostDetails::createPostDetails($title, $content, $id);
+
+        return redirect()->route('postShow', ['id' => $id]);
     }
 
 }

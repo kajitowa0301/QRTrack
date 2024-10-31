@@ -51,6 +51,8 @@ Route::get('/',[ViewController::class,'home'])->name('home');
 Route::get('/post',[PostController::class,'index'])->middleware('auth')->name('postView');
 Route::post('/post',[PostController::class,'store'])->name('postStore');
 Route::get('/post_view/{id}',[PostController::class,'show'])->name('postShow');
+Route::get('/post_view/{id}/add', [PostController::class, 'showAddDetailForm'])->name('postAddDetailForm');
+Route::post('/post_view/{id}/add', [PostController::class, 'addDetail'])->name('postAddDetail');
 
 // 検索機能用のルーティング
 Route::post('/search', [SearchController::class, 'search'])->name('search');

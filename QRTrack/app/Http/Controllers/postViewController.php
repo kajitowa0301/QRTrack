@@ -7,8 +7,12 @@ use Illuminate\Http\Request;
 
 class postViewController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        return view('post_view');
+        // $idを使ってPostsモデルからデータを取得
+        $postData = Posts::find($id);
+        $datas = Posts::where('posts_id', $id)->get();
+
+        return view('post_view', compact('postData', 'datas'));
     }
 }
