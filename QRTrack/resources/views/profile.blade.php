@@ -9,7 +9,7 @@
 
   @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
-<body class="w-full">
+<body class="w-full gra">
   <x-header-component />
   @if (session('message'))
     <div class=" text-red-400 font-bold">
@@ -25,9 +25,13 @@
       <p class="font-medium hover:text-gray-400">投稿数：{{ $postCount->count() }}</p>
     </div>
   </div>
-  <div class="md:flex justify-center">
-    <x-card-component />
-  </div>
+  <div class=" w-full flex">
+        <div class="flex flex-wrap">
+            @foreach ($datas as $data)
+                    <x-card-component :data="$data" />
+            @endforeach
+        </div>
+   </div>
 
   <!-- モーダル -->
   <div id="nameChangeModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">

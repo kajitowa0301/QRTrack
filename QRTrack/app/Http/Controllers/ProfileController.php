@@ -19,7 +19,8 @@ class ProfileController extends Controller
     public function show(): View{
         $postCount =  Posts::where('users_id', auth()->id())->get();
         // dd($postCount);
-        return view('/profile',compact('postCount'));
+        $datas = Posts::where('users_id', auth()->id())->get('posts_id');
+        return view('/profile',compact('postCount','datas'));
     }
     public function edit(Request $request): View
     {
@@ -70,8 +71,7 @@ class ProfileController extends Controller
         $request->validate([
             'newname' => ['required', 'string', 'max:255'],
         ]);
-
-        $user = Auth::user();
+        $user = User::find(auth()->id());
         $user->users_name = $request->input('newname');
         $user->save();
 

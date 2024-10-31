@@ -23,6 +23,7 @@
                     <x-card-component :data="$data" />
             @endforeach
         </div>
+   </div>     
 </body>
 
 </html>
