@@ -53,6 +53,6 @@ Route::post('/post',[PostController::class,'store'])->name('postStore');
 Route::get('/post_view/{id}',[PostController::class,'show'])->name('postShow');
 
 // 検索機能用のルーティング
-Route::get('/search', [SearchController::class, 'search'])->name('search');
+Route::post('/search', [SearchController::class, 'search'])->name('search');
 
 require __DIR__.'/auth.php';
