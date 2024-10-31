@@ -24,7 +24,7 @@
         </div>
         @if ($postData->users_id == Auth::id())
         <div class="w-1/3 flex justify-evenly">
-            <x-delete-box :$id />
+            <x-delete-box :$id="$data->post_id" />
         </div>
         @endif
     </div>

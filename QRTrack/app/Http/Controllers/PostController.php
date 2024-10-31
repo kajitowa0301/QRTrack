@@ -65,11 +65,20 @@ class PostController extends Controller
     // 投稿個別表示
     public function show(Posts $id)
     {
-        $datas = Posts::getDetails($id); 
+        $post = Posts::find($id);
+        $datas = PostDetails::where('posts_id', $id)->get(); 
         $postId = $id['posts_id'];
         $usersId = $id['users_id'];
+        $postsType = $id->posts_type;
         // dd($postId);
-        return view('post_view',compact('datas','postId','usersId'));
+        return view('post_view',compact('datas','postId','usersId','postsType'));
+    }
+
+    // 新しい詳細を追加するフォームを表示
+    public function showAddDetailForm($id)
+    {
+        $postData = Posts::find($id);
+        return view('add_detail', compact('postData'));
     }
 
     //　新しい詳細を追加
@@ -79,7 +88,7 @@ class PostController extends Controller
         $content = $request->input('details_content');
 
         // タイトル、詳細をPostDetailsモデルに保存
-        PostDetails::createPostDetails($title, $content, $id);
+        PostDetails::addPostDetails($title, $content, $id);
 
         return redirect()->route('postShow', ['id' => $id]);
     }

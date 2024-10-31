@@ -8,12 +8,13 @@ use Illuminate\Contracts\View\View;
 
 class deleteBox extends Component
 {
+    public $id;
     /**
      * Create a new component instance.
      */
-    public function __construct( public $id,)
+    public function __construct($id)
     {
-        //
+        $this->id = $id;
     }
 
     /**

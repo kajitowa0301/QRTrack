@@ -28,6 +28,16 @@ class PostDetails extends Model
         ]);
         $postDetails->save();
     }
+    // 詳細追加用のメソッド
+    public static function addPostDetails($title, $content, $posts_id)
+    {
+        $postDetails = new PostDetails([
+            'details_title' => $title,
+            'details_content' => $content,
+            'posts_id' => intval($posts_id), // 新しいメソッドでは直接使用
+        ]);
+        $postDetails->save();
+    }
 
     // postsとのリレーションシップを定義
     public function post()
