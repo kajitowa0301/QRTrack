@@ -9,6 +9,7 @@
 
   @vite(['resources/css/app.css', 'resources/js/app.js']) <!-- ←これを書き込むことでTaileindCSSが導入できる -->
 </head>
+
 <body>
   <x-header-component />
   <div class=" mt-6 ml-4 font-medium text-xl text-black">
@@ -19,18 +20,21 @@
   </div>
   @foreach ($datas as $detail)
     <div class="mt-4">
-    <x-list-component :detail="$detail"/>
+    <x-list-component :$detail />
     </div>
   @endforeach
 
   @if ($usersId == Auth::id())
-    <div class="w-1/3 flex justify-evenly">
+    <div class="w-full flex justify-evenly">
+      <a href="">
+        <x-postbtn-component />
+      </a>
       <a href="{{ route('postAddDetailForm', ['id' => $postId]) }}">
         <x-postbtn-component />
-      </a>  
+      </a>
     </div>
   @endif
-  
+
 </body>
 
 </html>

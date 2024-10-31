@@ -65,12 +65,10 @@ class PostController extends Controller
     // 投稿個別表示
     public function show(Posts $id)
     {
-        $post = Posts::find($id);
-        $datas = PostDetails::where('posts_id', $id)->get(); 
         $postId = $id['posts_id'];
         $usersId = $id['users_id'];
+        $datas = PostDetails::where('posts_id', $postId)->get('details_id');
         $postsType = $id->posts_type;
-        // dd($postId);
         return view('post_view',compact('datas','postId','usersId','postsType'));
     }
 

@@ -10,14 +10,14 @@ use Illuminate\Contracts\View\View;
 
 class listComponent extends Component
 {
-    public $postId;
+    public $detail;
 
     /**
      * Create a new component instance.
      */
-    public function __construct(int $postId)
+    public function __construct(PostDetails $detail)
     {
-        $this->postId = $postId;
+        $this->detail = $detail;
     }
 
     /**
@@ -25,7 +25,8 @@ class listComponent extends Component
      */
     public function render(): View|Closure|string
     {
-        $details = PostDetails::where('posts_id', $this->postId)->get(['details_title', 'details_content']);
+        // dd($this->detail);
+        $details = PostDetails::where('details_id', $this->detail->details_id)->get(['details_title', 'details_content'])->first();
         return view('components.list-component', compact('details'));
     }
 }
