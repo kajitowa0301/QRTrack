@@ -26,7 +26,8 @@ class listComponent extends Component
     public function render(): View|Closure|string
     {
         // dd($this->detail);
-        $details = PostDetails::where('details_id', $this->detail->details_id)->get(['details_title', 'details_content'])->first();
-        return view('components.list-component', compact('details'));
+        $details = PostDetails::where('details_id', $this->detail->details_id)->get(['details_title', 'details_content','details_id'])->first();
+        $id =$details->details_id;
+        return view('components.list-component', compact('details','id'));
     }
 }

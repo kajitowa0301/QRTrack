@@ -87,8 +87,32 @@ class PostController extends Controller
 
         // タイトル、詳細をPostDetailsモデルに保存
         PostDetails::addPostDetails($title, $content, $id);
+        dd($id);
+        return redirect()->route('postShow', ['id' => $id]);
+    }
+
+    // 詳細編集画面表示
+    public function detailedit($id)
+    {
+        $post_id = PostDetails::where('details_id', $id)->get('posts_id')->first();
+        $postData = Posts::where('posts_id', $post_id['posts_id'])->first();
+        return view('edit_detail', compact('id','postData'));
+    }
+
+    // 詳細修正処理
+    public function detailupdate(Request $request, $id)
+    {
+        $post_id =  PostDetails::where('details_id', $id)->get('posts_id')->first();
+        $title = $request->input('details_title');
+        $content = $request->input('details_content');
+
+        // タイトル、詳細をPostDetailsモデルに保存
+        PostDetails::updatePostDetails($title, $content, $id);
+
+        $id = $post_id['posts_id'];
 
         return redirect()->route('postShow', ['id' => $id]);
+
     }
 
 }

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class PostDetails extends Model
 {
     use HasFactory;
-
+protected $primaryKey = 'details_id';
     protected $fillable = [
         // タイトル
        'details_title',
@@ -36,6 +36,15 @@ class PostDetails extends Model
             'details_content' => $content,
             'posts_id' => intval($posts_id), // 新しいメソッドでは直接使用
         ]);
+        $postDetails->save();
+    }
+
+    // 詳細編集用のメソッド
+    public static function updatePostDetails($title, $content, $id)
+    {
+        $postDetails =  PostDetails::where('details_id', $id)->first();
+        $postDetails->details_title = $title;
+        $postDetails->details_content = $content;
         $postDetails->save();
     }
 

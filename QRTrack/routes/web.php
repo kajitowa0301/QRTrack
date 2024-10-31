@@ -55,6 +55,10 @@ Route::get('/post_view/{id}',[PostController::class,'show'])->name('postShow');
 Route::get('/post_view/{id}/add', [PostController::class, 'showAddDetailForm'])->name('postAddDetailForm');
 Route::post('/post_view/{id}/add', [PostController::class, 'addDetail'])->name('postAddDetail');
 
+// 編集画面用のルーティング
+Route::get('/edit_detail/{id}', [PostController::class, 'detailedit'])->name('detailEditForm');
+Route::post('/edit_detail/{id}', [PostController::class, 'detailupdate'])->name('detailUpdate');
+
 // 検索機能用のルーティング
 Route::post('/search', [SearchController::class, 'search'])->name('search');
 

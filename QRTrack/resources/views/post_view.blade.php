@@ -26,9 +26,6 @@
 
   @if ($usersId == Auth::id())
     <div class="w-full flex justify-evenly">
-      <a href="">
-        <x-postbtn-component />
-      </a>
       <a href="{{ route('postAddDetailForm', ['id' => $postId]) }}">
         <x-postbtn-component />
       </a>
