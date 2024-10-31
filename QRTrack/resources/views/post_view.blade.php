@@ -17,13 +17,12 @@
   <div class="flex justify-center items-center">
     <p class=" font-bold text-3xl">{{ $postsType }}</p>
   </div>
-  <x-list-component :$postId/>
   @foreach ($datas as $detail)
     <div class="mt-4">
-      <h3 class="text-lg font-bold text-gray-800">{{ $detail->details_title }}</h3>
-      <p class="mt-1 text-gray-500">{{ $detail->details_content }}</p>
+    <x-list-component :detail="$detail"/>
     </div>
   @endforeach
+
   @if ($usersId == Auth::id())
     <div class="w-1/3 flex justify-evenly">
       <a href="{{ route('postAddDetailForm', ['id' => $postId]) }}">
