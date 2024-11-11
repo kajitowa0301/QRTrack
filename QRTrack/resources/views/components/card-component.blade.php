@@ -1,5 +1,5 @@
 <div class="my-3 mx-auto">
-    <input type="hidden" name="id" value="{{$id}}">
+    <input type="hidden" name="id" value={{$id}}>
     <a href="{{route('postShow',$id)}}">
         <div class="flex flex-col w-1/5 mx-2 bg-white border shadow-sm rounded-xl p-1
      lg:w-52 lg:mx-5
@@ -24,7 +24,7 @@
         </div>
         @if ($postData->users_id == Auth::id())
         <div class="w-1/3 flex justify-evenly">
-            <x-delete-box :$id="$data->post_id" />
+            <x-delete-box :$id />
         </div>
         @endif
     </div>
