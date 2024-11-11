@@ -19,9 +19,15 @@
   @endif
   <div class=" w-full flex">
         <div class="flex flex-wrap">
-            @foreach ($datas as $data)
+          @if ($datas->isEmpty())
+            <div class="text-2xl font-bold text-center w-full">
+              投稿がありません
+            </div>
+          @else
+          @foreach ($datas as $data)
                     <x-card-component :data="$data" />
             @endforeach
+          @endif
         </div>
    </div>     
 </body>
