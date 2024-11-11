@@ -10,7 +10,7 @@ use Illuminate\Contracts\View\View;
 
 class cardComponent extends Component
 {
-    public $data;
+	public $data;
 
     /**
      * Create a new component instance.
@@ -25,7 +25,7 @@ class cardComponent extends Component
         $data = $this->data;
         $id = $data['posts_id'];
         $postData = Posts::where('posts_id', $id)->first(['users_id','posts_type','posts_qr','img_path']);
-        $title_content = PostDetails::where('posts_id', $id)->first();
+	$title_content = PostDetails::where('posts_id', $id)->first();
         return view('components.card-component', compact('postData', 'title_content', 'id'));
     }
 }
