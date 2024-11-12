@@ -12,8 +12,19 @@ class ViewController extends Controller
     public function home()
     {
         // $datas = Posts::get('posts_id');
-        $datas = Posts::with('details')->get();
-                // dd($datas);
+        $datas = DB::table('post_details')
+            ->join('posts', 'posts.posts_id', '=', 'post_details.posts_id')
+            ->select(
+                'posts.posts_id',
+                'posts.users_id',
+                'posts.posts_type',
+                'posts.img_path',
+                'posts.posts_qr',
+                'post_details.details_title',
+                'post_details.details_content'
+            )
+            ->get();
+                dd($datas);
           return view('home',compact('datas'));
 
     }
