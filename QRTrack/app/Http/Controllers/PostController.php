@@ -88,7 +88,6 @@ class PostController extends Controller
 
         // タイトル、詳細をPostDetailsモデルに保存
         PostDetails::addPostDetails($title, $content, $id);
-        dd($id);
         return redirect()->route('postShow', ['id' => $id]);
     }
 
