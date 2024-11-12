@@ -16,6 +16,7 @@ class ViewController extends Controller
             ->join('post_details', 'posts.posts_id', '=', 'post_details.posts_id')
             ->select(
                 'posts.posts_id',
+                'posts.users_id',
                 'posts.posts_type',
                 'posts.img_path',
                 'posts.posts_qr',
