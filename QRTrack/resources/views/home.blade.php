@@ -25,10 +25,7 @@
             </div>
           @else
           @foreach ($datas as $data)
-          @php
-          dd($data['posts_id']);
-          @endphp
-                    <x-card-component :data="$data->posts_id" />
+                    <x-card-component :data="$data['posts_id']" />
             @endforeach
           @endif
         </div>
