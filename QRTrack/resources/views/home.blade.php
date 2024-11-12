@@ -25,9 +25,9 @@
             </div>
           @else
           @foreach ($datas as $data)
-                    <x-card-component :data="$data" />
+                    <x-card-component :data="$data['posts_id']" />
                     @php
-                    dd($data);
+                    dd($data['posts_id']);
                     @endphp
             @endforeach
           @endif
