@@ -1,5 +1,5 @@
 <div>
-    <form action="{{ route('postDestroy', $id) }}" method="POST">
+    <form action="{{ route('postDestroy', $data->posts_id) }}" method="POST">
         @csrf
         @method('DELETE')
         <button type="submit" onclick="return confirm('本当に削除しますか？')" value="削除">
