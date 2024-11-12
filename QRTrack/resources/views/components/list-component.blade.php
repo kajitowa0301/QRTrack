@@ -9,7 +9,7 @@
         <div class="flex justify-center items-center text-l text-black font-normal">
             <p class="m-5">{{ $detail->details_content }}</p>
         </div>
-        <a href="{{route('detailEditForm',$details_id)}}" class="flex justify-end">
+        <a href="{{route('detailEditForm',$id)}}" class="flex justify-end">
             <x-edit-button-component />
         </a>
     </div>
