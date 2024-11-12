@@ -26,7 +26,7 @@
     @else
       @foreach ($datas as $data)
       @php
-      dd($data->ditails->first()->details_title);
+      dd($data->ditails->details_title);
       @endphp
       <x-card-component :data="$data" />
     @endforeach
