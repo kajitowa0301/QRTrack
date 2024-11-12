@@ -14,25 +14,22 @@
   <x-header-component />
   @if (session('message'))
     <div class=" text-red-400 font-bold">
-      {{ session('message') }}
+    {{ session('message') }}
     </div>
   @endif
   <div class=" w-full flex">
-        <div class="flex flex-wrap">
-          @if ($datas->isEmpty())
-            <div class="text-2xl font-bold text-center w-full">
-              投稿がありません
-            </div>
-          @else
-          @foreach ($datas as $data)
-          @php
-          dd($data);
-          @endphp
-                    <x-card-component :data="$data['posts_id']" />
-            @endforeach
-          @endif
-        </div>
-   </div>     
+    <div class="flex flex-wrap">
+      @if ($datas->isEmpty())
+      <div class="text-2xl font-bold text-center w-full">
+      投稿がありません
+      </div>
+    @else
+      @foreach ($datas as $data)
+      <x-card-component :data="$data" />
+    @endforeach
+    @endif
+    </div>
+  </div>
 </body>
 
 </html>
