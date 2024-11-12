@@ -10,7 +10,6 @@ class ViewController extends Controller
 {
     public function home(){
         $datas = Posts::get('posts_id');
-        dd($datas);
         return view('home',compact('datas'));
     }
 }
