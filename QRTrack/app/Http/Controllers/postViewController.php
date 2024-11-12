@@ -14,6 +14,6 @@ class postViewController extends Controller
         $postData = Posts::find($id);
         $datas = Posts::where('posts_id', $id)->get();
 
-        return view('post_view', compact('postData', 'datas'));
+        return view('post_view', compact('postData', 'datas' ,'id'));
     }
 }

@@ -16,11 +16,11 @@
     <p>ものの名前</p>
   </div>
   <div class="flex justify-center items-center">
-    <p class=" font-bold text-3xl">{{ $postsType }}</p>
+    <p class=" font-bold text-3xl">{{ $postData->posts_type }}</p>
   </div>
   @foreach ($datas as $detail)
     <div class="mt-4">
-    <x-list-component :$detail />
+    <x-list-component :detail = "$detail" :id = "$id" />
     </div>
   @endforeach
 
