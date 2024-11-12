@@ -24,7 +24,7 @@ class ViewController extends Controller
                 'post_details.details_content'
             )
             ->get();
-
+                dd($datas);
           return view('home',compact('datas'));
 
     }
