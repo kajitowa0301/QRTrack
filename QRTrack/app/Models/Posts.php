@@ -21,7 +21,7 @@ class Posts extends Model
         'img_path',
     ];
     public function details(){
-        return $this->hasMany(PostDetails::class,'posts_id','posts_id');
+        return $this->hasMany(PostDetails::class,'posts_id');
     }
 
     // 投稿を作成
