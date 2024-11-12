@@ -20,7 +20,10 @@
   </div>
   @foreach ($datas as $detail)
     <div class="mt-4">
-    <x-list-component :detail = "$detail" :id = "$details_id" />
+      @php
+      dd($detail);
+      @endphp
+    <x-list-component :detail = "$detail"/>
     </div>
   @endforeach
 
