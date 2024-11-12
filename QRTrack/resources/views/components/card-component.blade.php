@@ -18,11 +18,11 @@
     </a>
     <div class=" flex justify-between">
         <div class="pl-1 w-1/2">
-            <x-like-button-component :$id="$data" />
+            <x-like-button-component :$data="$data" />
         </div>
         @if ($data->users_id == Auth::id())
             <div class="w-1/3 flex justify-evenly">
-                <x-delete-box :$id="$data" />
+                <x-delete-box :$data="$data" />
             </div>
         @endif
     </div>

@@ -1,6 +1,6 @@
 <div>
-  <button class="ml-3 mb-3" onclick="flag(this.value, `{{$id->posts_id}}`)" value="false" id="flag{{$id->posts_id}}">
-    <svg version="1.1" id="svg_color{{$id->posts_id}}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+  <button class="ml-3 mb-3" onclick="flag(this.value, `{{$data->posts_id}}`)" value="false" id="flag{{$data->posts_id}}">
+    <svg version="1.1" id="svg_color{{$data->posts_id}}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
       y="0px" viewBox="0 0 512 512" xml:space="preserve" class="w-7 h-7">
       <g>
         <path class="st0" d="M484.5,327.114c16.188-6.984,27.5-23.047,27.5-41.781c0-19.25-11.969-35.625-28.859-42.297
@@ -19,9 +19,9 @@
 </div>
 <script>
   window.onload = () => {
-    if (localStorage.getItem('posts_id{{$id->posts_id}}') == '{{$id->posts_id}}') {
-      document.getElementById('svg_color{{$id->posts_id}}').style.fill = '#FBCFE8';
-      document.getElementById('flag{{$id->posts_id}}').value = true;
+    if (localStorage.getItem('posts_id{{$data->posts_id}}') == '{{$data->posts_id}}') {
+      document.getElementById('svg_color{{$data->posts_id}}').style.fill = '#FBCFE8';
+      document.getElementById('flag{{$data->posts_id}}').value = true;
     }
   }
 
