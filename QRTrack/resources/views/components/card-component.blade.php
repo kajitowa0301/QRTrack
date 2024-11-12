@@ -9,7 +9,7 @@
                 alt="">
             <div class="p-4 md:p-5">
                 <h3 class="text-lg font-bold text-gray-800">
-                    {{$data->details[0]->posts_type}}
+                    {{$data->posts_type}}
                 </h3>
                 <p class="mt-1 text-gray-500 text-ellipsis overflow-hidden">
                     {{$data->details[0]->details_title}}
