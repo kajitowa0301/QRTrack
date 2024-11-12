@@ -24,7 +24,7 @@
       投稿がありません
       </div>
     @else
-      @foreach ($datas as $data)
+      @foreach ($datas->posts_id as $data)
       <x-card-component :data="$data" />
     @endforeach
     @endif
