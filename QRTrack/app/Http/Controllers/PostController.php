@@ -69,7 +69,7 @@ class PostController extends Controller
         $usersId = $id['users_id'];
         $datas = PostDetails::where('posts_id', $postId)->get('details_id');
         $postsType = $id->posts_type;
-        return view('post_view',compact('datas','postId','usersId','postsType'));
+        return view('post_view',compact('datas','postId','usersId','postsType','id'));
     }
 
     // 新しい詳細を追加するフォームを表示
