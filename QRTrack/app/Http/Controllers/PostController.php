@@ -67,9 +67,9 @@ class PostController extends Controller
     {
         $postId = $id['posts_id'];
         $usersId = $id['users_id'];
-        $datas = PostDetails::where('posts_id', $postId)->get('details_id');
+        $datas = PostDetails::where('posts_id', $postId)->get(['details_id','details_title','details_content']);
         $postsType = $id->posts_type;
-        return view('post_view',compact('datas','postId','usersId','postsType','id'));
+        return view('post_view',compact('datas','postId','usersId','postsType',['id'=>$datas['details_id']]));
     }
 
     // 新しい詳細を追加するフォームを表示
