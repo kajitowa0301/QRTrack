@@ -20,6 +20,9 @@ class Posts extends Model
         // strageのpath
         'img_path',
     ];
+    public function details(){
+        return $this->hasMany(PostDetails::class,'posts_id','posts_id');
+    }
 
     // 投稿を作成
     public static function createPosts($obj_name,$user_id)

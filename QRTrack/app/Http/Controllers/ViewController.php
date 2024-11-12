@@ -12,8 +12,8 @@ class ViewController extends Controller
     public function home()
     {
         // $datas = Posts::get('posts_id');
-        $datas = DB::table('posts')
-            ->join('post_details', 'posts.posts_id', '=', 'post_details.posts_id')
+        $datas = DB::table('post_details')
+            ->join('posts', 'posts.posts_id', '=', 'post_details.posts_id')
             ->select(
                 'posts.posts_id',
                 'posts.users_id',

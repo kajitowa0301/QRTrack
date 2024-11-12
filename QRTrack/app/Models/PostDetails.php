@@ -17,6 +17,10 @@ protected $primaryKey = 'details_id';
         //posts_id
         'posts_id',    
     ];
+    public function posts()
+    {
+        return $this->belongsTo(Posts::class, 'posts_id', 'posts_id');
+    }
 
     public static function createPostDetails($title,$content,$posts_id)
     {
