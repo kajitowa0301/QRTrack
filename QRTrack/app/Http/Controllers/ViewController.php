@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\PostDetails;
 use Illuminate\Http\Request;
 use App\Models\Posts;
 use Illuminate\Support\Facades\DB;
@@ -13,11 +12,21 @@ class ViewController extends Controller
     public function home()
     {
         // $datas = Posts::get('posts_id');
-        $datas = Posts::get(['posts_id','posts_type','posts_qr','img_path']);
-        $details = PostDetails::get(['details_title','details_content']);
-        $zipped = collect($datas)->zip($details);
-        dd($zipped);
-        return view('home',compact('datas'));
+        $datas = DB::table('post_details')
+            ->join('posts', 'posts.posts_id', '=', 'post_details.posts_id')
+            ->select(
+                'posts.posts_id',
+                'posts.users_id',
+                'posts.posts_type',
+                'posts.img_path',
+                'posts.posts_qr',
+                'post_details.details_title',
+                'post_details.details_content'
+            )
+            ->distinct()
+            ->get();
+                dd($datas);
+          return view('home',compact('datas'));
 
     }
 }
