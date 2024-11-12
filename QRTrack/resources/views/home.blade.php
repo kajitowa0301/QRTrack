@@ -25,7 +25,7 @@
             </div>
           @else
           @foreach ($datas as $data)
-                    <x-card-component :data="$data" />
+                    <x-card-component :data="$data['posts_id']" />
             @endforeach
           @endif
         </div>
