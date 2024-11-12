@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\View\Components\cardComponent;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use App\View\Components\listComponent;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -22,5 +23,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Blade::component('components.card-component', cardComponent::class);
+        Blade::component('componets.list-component', listComponent::class);
     }
 }
