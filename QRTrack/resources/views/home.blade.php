@@ -26,6 +26,9 @@
           @else
           @foreach ($datas as $data)
                     <x-card-component :data="$data" />
+                    @php
+                    dd($data);
+                    @endphp
             @endforeach
           @endif
         </div>

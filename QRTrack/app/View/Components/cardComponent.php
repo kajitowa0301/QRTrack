@@ -23,10 +23,10 @@ class cardComponent extends Component
     public function render(): View|Closure|string
     {
         $data = $this->data;
-        dd($data);
+        dd($this->data);
         $id = $data['posts_id'];
         $postData = Posts::where('posts_id', $id)->first(['users_id','posts_type','posts_qr','img_path']);
 	    $title_content = PostDetails::where('posts_id', $id)->first();
-        return view('components.card-component', compact('postData', 'title_content', ['id'=>$id]));
+        return view('components.card-component', compact(['postData'=>$postData], ['title_content'=>$title_content], ['id'=>$id]));
     }
 }
