@@ -23,7 +23,7 @@ class ViewController extends Controller
                 'post_details.details_title',
                 'post_details.details_content'
             )
-            ->distinct()
+            ->groupBy('posts.posts_id')
             ->get();
                 dd($datas);
           return view('home',compact('datas'));
