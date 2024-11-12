@@ -13,7 +13,7 @@ class ViewController extends Controller
     {
         // $datas = Posts::get('posts_id');
         $datas = Posts::with('details')->get();
-                dd($datas->details->first()->details_title);
+                dd($datas->first()->details_title);
           return view('home',compact('datas'));
 
     }
