@@ -25,9 +25,6 @@
             </div>
           @else
           @foreach ($datas as $data)
-          @php
-          dd($data);  // ←ここでデバッグ
-          @endphp
                     <x-card-component :data="$data['posts_id']" />
             @endforeach
           @endif
