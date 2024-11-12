@@ -9,7 +9,7 @@ use App\Models\Posts;
 class ViewController extends Controller
 {
     public function home(){
-        $datas = Posts::all();
+        $datas = Posts::get('posts_id');
         return view('home',compact('datas'));
     }
 }
