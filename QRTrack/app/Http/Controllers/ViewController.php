@@ -19,8 +19,8 @@ class ViewController extends Controller
                 'posts.posts_type',
                 'posts.img_path',
                 'posts.posts_qr',
-                'post_details.title',
-                'post_details.content'
+                'post_details.details_title',
+                'post_details.details_content'
             )
             ->get();
 
