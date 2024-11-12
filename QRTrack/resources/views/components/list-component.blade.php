@@ -1,7 +1,4 @@
 <div class="w-full ">
-    @php
-    dd($detail);
-    @endphp
     <!-- 大枠 -->
     <div class="mx-4 outline border-gray-400 outline-1 rounded-xl">
         <!-- タイトル -->
