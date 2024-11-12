@@ -13,7 +13,7 @@ class ViewController extends Controller
     {
         // $datas = Posts::get('posts_id');
         $datas = Posts::with(['details' => function ($query) {
-            $query->orderBy('id')->limit(1);
+            $query->orderBy('posts_id')->limit(1);
         }])->get();
                 dd($datas);
           return view('home',compact('datas'));
