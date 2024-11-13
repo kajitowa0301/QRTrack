@@ -18,16 +18,20 @@ class ProfileController extends Controller
     /**
      * Display the user's profile form.
      */
-    public function show(): View{
-        $postCount =  Posts::where('users_id', auth()->id())->get();
-        $datas = Posts::where('users_id', auth()->id()) // 現在のユーザーの投稿をフィルタリング
-        ->with(['postDetails' => function ($query) {
-            $query->orderBy('details_id', 'ASC')->limit(1); // 関連するpost_detailsを1件取得
-        }])
-        ->get();
-        $datas->details_title = PostDetails::where('posts_id', $datas->posts_id)->orderBy('details_id', 'ASC')->limit(1)->get();
-        dd($datas->details_title);
-        return view('/profile',compact('postCount','datas'));
+    public function show(): View
+    {
+        $postCount = Posts::where('users_id', auth()->id())->get();
+        $datas = Posts::where('users_id', auth()->id())
+            ->select('posts.*', DB::raw('(
+        SELECT details_title 
+        FROM post_details 
+        WHERE post_details.posts_id = posts.posts_id 
+        ORDER BY details_id ASC 
+        LIMIT 1
+    ) as details_title'))
+            ->get();
+        dd($datas);
+        return view('/profile', compact('postCount', 'datas'));
     }
     public function edit(Request $request): View
     {
