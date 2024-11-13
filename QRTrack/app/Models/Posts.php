@@ -38,7 +38,7 @@ class Posts extends Model
     // URLを更新
     public static function updateUrl($url,$id)
     {
-        $path = $url.'/'.$id;
+        $path = $url.'_view'.'/'.$id;
         $up = new Posts();
         $up->where('posts_id',$id)
         ->update(['posts_qr'=>$path]);
