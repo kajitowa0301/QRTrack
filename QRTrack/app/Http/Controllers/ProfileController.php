@@ -19,13 +19,11 @@ class ProfileController extends Controller
      */
     public function show(): View{
         $postCount =  Posts::where('users_id', auth()->id())->get();
-        $datas = Posts::select('posts.*', DB::raw('(
-            SELECT details_title 
-            FROM post_details 
-            WHERE post_details.posts_id = posts.posts_id  && post.user_id = auth()->id()
-            ORDER BY details_id ASC 
-            LIMIT 1
-        ) as details_title'))
+        $datas = Posts::with(['postDetails' => function ($query) {
+            $query->where('user_id', auth()->id())
+                  ->orderBy('details_id', 'ASC')
+                  ->limit(1);
+        }])
         ->get();
         return view('/profile',compact('postCount','datas'));
     }
