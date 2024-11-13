@@ -12,7 +12,7 @@
                     {{$data->posts_type}}
                 </h3>
                 <p class="mt-1 text-gray-500 text-ellipsis overflow-hidden">
-                    {{$data->details[0]->details_title}}
+                    {{$data->details_title}}
                 </p>
             </div>
     </a>
