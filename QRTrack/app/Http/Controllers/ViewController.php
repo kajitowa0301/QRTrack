@@ -20,7 +20,6 @@ class ViewController extends Controller
             LIMIT 1
         ) as details_title'))
         ->get();
-        dd($datas);
           return view('home',compact('datas'));
 
     }
