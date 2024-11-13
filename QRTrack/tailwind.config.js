@@ -32,6 +32,7 @@ export default {
     plugins: [
         forms,
         require("preline/plugin"),
+        require('@tailwindcss/line-clamp'),
         // プロパティをまとめることができる
         plugin(function ({ addComponents }) {
             addComponents({

@@ -8,10 +8,10 @@
             <img class="w-64 h-64;lg:w-60 h-60; md:w-52 h-52; sm:w-52 sm:h-52" src="{{asset($data->img_path)}}"
                 alt="">
             <div class="p-4 md:p-5">
-                <h3 class="text-lg font-bold text-gray-800">
+                <h3 class="text-lg font-bold text-gray-800 line-clamp-1">
                     {{$data->posts_type}}
                 </h3>
-                <p class="mt-1 text-gray-500 text-ellipsis overflow-hidden">
+                <p class="mt-1 text-gray-500 line-clamp-1">
                     {{$data->details_title}}
                 </p>
             </div>
