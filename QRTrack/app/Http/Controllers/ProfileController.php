@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -18,8 +19,14 @@ class ProfileController extends Controller
      */
     public function show(): View{
         $postCount =  Posts::where('users_id', auth()->id())->get();
-        // dd($postCount);
-        $datas = Posts::where('users_id', auth()->id())->get('posts_id');
+        $datas = Posts::select('posts.*', DB::raw('(
+            SELECT details_title 
+            FROM post_details 
+            WHERE post_details.posts_id = posts.posts_id 
+            ORDER BY details_id ASC 
+            LIMIT 1
+        ) as details_title'))
+        ->get();
         return view('/profile',compact('postCount','datas'));
     }
     public function edit(Request $request): View
