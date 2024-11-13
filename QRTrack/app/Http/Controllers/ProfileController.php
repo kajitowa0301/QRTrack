@@ -20,7 +20,7 @@ class ProfileController extends Controller
     public function show(): View{
         $postCount =  Posts::where('users_id', auth()->id())->get();
         $datas = Posts::with(['postDetails' => function ($query) {
-            $query->where('user_id', auth()->id())
+            $query->where('users_id', auth()->id())
                   ->orderBy('details_id', 'ASC')
                   ->limit(1);
         }])
