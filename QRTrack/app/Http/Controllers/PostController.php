@@ -37,7 +37,7 @@ class PostController extends Controller
         ->first('posts_id');
 
         // 保存された情報を元にURLを作成
-        Posts::updateUrl($url,$posts_id['posts_id']);
+        Posts::updateUrl($url+'_view',$posts_id['posts_id']);
 
         // QRcodeに必要なURLを取得
         $qr_url = Posts::where('users_id', auth()->id())
