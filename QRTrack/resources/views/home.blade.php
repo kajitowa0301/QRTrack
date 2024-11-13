@@ -8,6 +8,7 @@
   <title>QRTrack</title>
 
   @vite(['resources/css/app.css', 'resources/js/app.js']) <!-- ←これを書き込むことでTaileindCSSが導入できる -->
+  <link rel="icon" href="{{asset('/storage/img/favicon.ico')}}">
 </head>
 
 <body class="w-full h-full gra">
