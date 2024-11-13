@@ -18,12 +18,17 @@
   </button>
 </div>
 <script>
-  window.onload = () => {
-    if (localStorage.getItem('posts_id{{$data->posts_id}}') == '{{$data->posts_id}}') {
-      document.getElementById('svg_color{{$data->posts_id}}').style.fill = '#FBCFE8';
-      document.getElementById('flag{{$data->posts_id}}').value = true;
-    }
-  }
+  document.addEventListener('DOMContentLoaded', () => {
+    // ページ読み込み時にすべての投稿IDに対して処理を行う
+    const flags = document.querySelectorAll('[id^="flag"]');
+    flags.forEach(flag => {
+      const id = flag.id.replace('flag', '');
+      if (localStorage.getItem('posts_id' + id) == id) {
+        document.getElementById('svg_color' + id).style.fill = '#FBCFE8';
+        flag.value = true;
+      }
+    });
+  });
 
   function flag(value, id) {
     if (value == 'false') {
@@ -40,4 +45,6 @@
       console.log('削除:' + id);
     }
   }
+</script>
+
 </script>
