@@ -9,8 +9,10 @@
         <div class="flex justify-center items-center text-l text-black font-normal">
             <p class="m-5">{{ $detail->details_content }}</p>
         </div>
+        @if ($userid == Auth::id())
         <a href="{{route('detailEditForm',$detail->details_id)}}" class="flex justify-end">
             <x-edit-button-component />
         </a>
+        @endif
     </div>
 </div>
