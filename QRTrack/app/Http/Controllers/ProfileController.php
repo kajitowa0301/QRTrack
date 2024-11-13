@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\PostDetails;
 use App\Models\Posts;
 use App\Models\User;
-use App\Models\PostDetails;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -21,18 +21,11 @@ class ProfileController extends Controller
     public function show(): View{
         $postCount =  Posts::where('users_id', auth()->id())->get();
         $datas = Posts::where('users_id', auth()->id()) // 現在のユーザーの投稿をフィルタリング
-    ->get()
-    ->map(function ($post) {
-        // 各投稿に関連するpost_detailsから最初のdetails_titleを取得
-        $detailsTitle = PostDetails::where('posts_id', $post->posts_id)
-            ->orderBy('details_id', 'ASC')
-            ->value('details_title'); // 直接details_titleを取得
-
-        // details_titleを新しいプロパティとして追加
-        $post->details_title = $detailsTitle;
-
-        return $post;
-    });
+        ->with(['postDetails' => function ($query) {
+            $query->orderBy('details_id', 'ASC')->limit(1); // 関連するpost_detailsを1件取得
+        }])
+        ->get();
+        $datas->details_title = PostDetails::where('posts_id', $datas->posts_id)->orderBy('details_id', 'ASC')->limit(1)->get();
         dd($datas->details_title);
         return view('/profile',compact('postCount','datas'));
     }
