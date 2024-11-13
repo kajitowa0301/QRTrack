@@ -22,7 +22,7 @@ class ProfileController extends Controller
         $datas = Posts::select('posts.*', DB::raw('(
             SELECT details_title 
             FROM post_details 
-            WHERE post_details.posts_id = posts.posts_id 
+            WHERE post_details.posts_id = posts.posts_id  && post.user_id = auth()->id()
             ORDER BY details_id ASC 
             LIMIT 1
         ) as details_title'))
