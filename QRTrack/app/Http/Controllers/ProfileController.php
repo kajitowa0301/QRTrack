@@ -24,7 +24,7 @@ class ProfileController extends Controller
             $query->orderBy('details_id', 'ASC')->limit(1); // 関連するpost_detailsを1件取得
         }])
         ->get();
-        dd($datas);
+        dd($datas->details_title);
         return view('/profile',compact('postCount','datas'));
     }
     public function edit(Request $request): View
