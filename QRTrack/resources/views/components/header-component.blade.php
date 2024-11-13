@@ -44,7 +44,7 @@
          <!-- ログアウト表示 -->
         <form method="POST" action="{{ route('logout') }}">
         @csrf
-        <a :href="route('logout')" onclick="event.preventDefault();
+        <a class="font-medium text-gray-600 hover:text-gray-400"  :href="{{route('logout')}}" onclick="event.preventDefault();
                           this.closest('form').submit();">Log out</a>
         </form>
       @endauth
