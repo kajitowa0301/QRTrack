@@ -9,7 +9,7 @@
 
   @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
-<body class="w-full">
+<body class="w-full gra">
   <x-header-component />
   @if (session('message'))
     <div class=" text-red-400 font-bold">
