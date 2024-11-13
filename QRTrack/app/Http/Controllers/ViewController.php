@@ -12,7 +12,14 @@ class ViewController extends Controller
     public function home()
     {
         // $datas = Posts::get('posts_id');
-        $datas = Posts::with('details')->get();
+        $datas = Posts::select('posts.*', DB::raw('(
+            SELECT details_title 
+            FROM post_details 
+            WHERE post_details.posts_id = posts.posts_id 
+            ORDER BY details_id ASC 
+            LIMIT 1
+        ) as details_title'))
+        ->get();
         dd($datas);
           return view('home',compact('datas'));
 
