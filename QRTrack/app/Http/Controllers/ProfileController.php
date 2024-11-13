@@ -30,7 +30,6 @@ class ProfileController extends Controller
         LIMIT 1
     ) as details_title'))
             ->get();
-        dd($datas);
         return view('/profile', compact('postCount', 'datas'));
     }
     public function edit(Request $request): View
