@@ -8,6 +8,7 @@
   <title>詳細追加画面</title>
 
   @vite(['resources/css/app.css', 'resources/js/app.js']) <!-- ←これを書き込むことでTailwindCSSが導入できる -->
+  <link rel="icon" href="{{asset('img/favicon.ico')}}">
 </head>
 <body>
   <x-header-component />

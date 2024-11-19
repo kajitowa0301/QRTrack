@@ -8,6 +8,7 @@
   <title>検索結果</title>
 
   @vite(['resources/css/app.css','resources/js/app.js'])
+  <link rel="icon" href="{{asset('img/favicon.ico')}}">
 </head>
 <body class="w-full gra">
   <x-header-component />
