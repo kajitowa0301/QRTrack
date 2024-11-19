@@ -28,8 +28,9 @@ class SearchController extends Controller
                 LIMIT 1
             ) as details_title'))
             ->get();
+            dd($datas);
         }
-        dd($datas);
+       
         //検索結果をビューに渡す
         return view('search_view', compact('results', 'query'));
     }
