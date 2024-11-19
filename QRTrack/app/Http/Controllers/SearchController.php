@@ -16,11 +16,7 @@ class SearchController extends Controller
         $results = Posts::where('posts_type', 'LIKE', "%{$query}%")
             ->orWhereHas('postDetails', function ($q) use ($query) {
                 $q->where('details_title', 'LIKE', "%{$query}%");
-            })
-            ->get();
-        foreach ($results as $result) {
-            $datas = Posts::where('posts_id', $result->posts_id)
-            ->select('posts.*', DB::raw('(
+            })->select('posts.*', DB::raw('(
                 SELECT details_title 
                 FROM post_details 
                 WHERE post_details.posts_id = posts.posts_id 
@@ -28,8 +24,7 @@ class SearchController extends Controller
                 LIMIT 1
             ) as details_title'))
             ->get();
-            dd($datas);
-        }
+        dd($results);
        
         //検索結果をビューに渡す
         return view('search_view', compact('results', 'query'));
