@@ -16,7 +16,7 @@ class SearchController extends Controller
                     ->orWhereHas('postDetails', function($q) use ($query) {
                     $q->where('details_title', 'LIKE', "%{$query}%");
                     })
-                    ->get();
+                    ->get(['posts_type','details_title']);
                   
         //検索結果をビューに渡す
         return view('search_view', compact('results', 'query'));
