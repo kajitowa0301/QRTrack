@@ -32,7 +32,7 @@
     </div>
   </div>
   <div class=" w-full flex justify-center items-center">
-    {{$datas->links('vendor.pagination.simple-tailwind')}}
+    {{$datas->links('vendor.pagination.tailwind')}}
   </div>
 </body>
 
