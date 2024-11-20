@@ -28,6 +28,7 @@
       @foreach ($datas as $data)
       <x-card-component :data="$data" />
     @endforeach
+    {{$datas->links()}}
     @endif
     </div>
   </div>
