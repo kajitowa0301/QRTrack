@@ -28,9 +28,11 @@
       @foreach ($datas as $data)
       <x-card-component :data="$data" />
     @endforeach
-    {{$datas->links()}}
     @endif
     </div>
+  </div>
+  <div class=" w-full flex justify-center items-center">
+    {{$datas->links()}}
   </div>
 </body>
 
