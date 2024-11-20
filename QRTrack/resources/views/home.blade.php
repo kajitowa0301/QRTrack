@@ -18,7 +18,7 @@
     {{ session('message') }}
     </div>
   @endif
-  <div class=" w-full mx-auto">
+  <div class=" w-full xl:flex  lg:mx-auto md:mx-auto sm:mx-auto">
     <div class="flex flex-wrap">
       @if ($datas->isEmpty())
       <div class="text-2xl font-bold text-center w-full">
