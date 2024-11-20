@@ -19,7 +19,7 @@ class ViewController extends Controller
             ORDER BY details_id ASC 
             LIMIT 1
         ) as details_title'))
-        ->paginate(2);
+        ->paginate(10);
           return view('home',compact('datas'));
 
     }
