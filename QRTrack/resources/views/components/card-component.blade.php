@@ -5,7 +5,7 @@
      lg:w-52 lg:mx-5
      md:mx-auto md:w-52 
      sm:w-52 sm:mx-auto xs:w-44 xs:mx-auto">
-            <img class="w-64 h-64;lg:w-60 h-60; md:w-52 h-52; sm:w-52 sm:h-52" src="{{$data->img_path}}"
+            <img class="w-64 h-64;lg:w-60 h-60; md:w-52 h-52; sm:w-52 sm:h-52" src="{{Storage::disk('s3')->url($data->image_path)}}"
                 alt="">
             <div class="p-4 md:p-5">
                 <h3 class="text-lg font-bold text-gray-800 truncate">
