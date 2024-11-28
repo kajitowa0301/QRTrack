@@ -43,7 +43,7 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
-
+        'cloud'=> env('FILESYSTEM_CLOUD', 's3'),
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
