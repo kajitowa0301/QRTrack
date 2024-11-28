@@ -17,6 +17,7 @@
     </svg>
   </button>
 </div>
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     // ページ読み込み時にすべての投稿IDに対して処理を行う
