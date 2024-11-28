@@ -50,7 +50,7 @@ class PostController extends Controller
         // 生成したQRcodeをStorageに保存
         $file_name = 'qrcode'.time().'.png';
         $src = Storage::disk('s3')->url($file_name);
-        Storage::disk('s3')->put($file_name, $qrcode,'public');
+        Storage::disk('s3')->put($file_name, $qrcode);
 
 
         // 生成したQRcodeのパスをPostsモデルに保存
